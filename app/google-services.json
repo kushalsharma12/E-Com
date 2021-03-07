@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "959244929866",
+    "project_id": "e-com-3b4d2",
+    "storage_bucket": "e-com-3b4d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959244929866:android:32de9219d3596bfbd5cfb3",
+        "android_client_info": {
+          "package_name": "com.kushalsharma.e_com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959244929866-2g6kj79fmveti8th89l1phci1c7b15m5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApoUG14YfaDeQQMuQifeikLJ5EdHRkm88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "959244929866-2g6kj79fmveti8th89l1phci1c7b15m5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
