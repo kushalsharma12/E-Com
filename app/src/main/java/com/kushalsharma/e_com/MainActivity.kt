@@ -5,13 +5,13 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.transition.Fade
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.transition.Fade
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
@@ -19,14 +19,19 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.kushalsharma.e_com.adapters.itemsAdapter
-import com.kushalsharma.e_com.adapters.onBtnClicked
+import com.kushalsharma.e_com.adapters.mAdapter
+import com.kushalsharma.e_com.dao.orderDao
 import com.kushalsharma.e_com.models.products
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), onBtnClicked {
+class MainActivity : AppCompatActivity(), mAdapter
+//    onBtnClicked
+{
 
-    val db = FirebaseFirestore.getInstance()
+    private val db = FirebaseFirestore.getInstance()
     private lateinit var auth: FirebaseAuth
+
+    private lateinit var orderDao: orderDao
 
     private lateinit var adapter: itemsAdapter
 
@@ -34,7 +39,10 @@ class MainActivity : AppCompatActivity(), onBtnClicked {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        orderDao = orderDao()
         setupRecyclerView()
+
+
     }
 
     private fun setupRecyclerView() {
@@ -117,14 +125,13 @@ class MainActivity : AppCompatActivity(), onBtnClicked {
     }
 
     @SuppressLint("WrongConstant")
-    override fun onbtnClicked() {
+    override fun onBtnClicked() {
 
-        val snackbar = Snackbar
-            .make(
-                constraintlayout,
-                "TENT || Check out the cart to order",
-                Snackbar.LENGTH_INDEFINITE
-            )
+        Snackbar.make(
+            constraintlayout,
+            "E-Com || Check out the cart to order",
+            Snackbar.LENGTH_LONG
+        )
             .setAction("View Cart", View.OnClickListener {
                 val intent = Intent(this, CartActivity::class.java)
                 startActivity(intent)
@@ -132,8 +139,10 @@ class MainActivity : AppCompatActivity(), onBtnClicked {
             .setActionTextColor(Color.RED)
             .setBackgroundTint(Color.YELLOW)
             .setTextColor(Color.BLUE)
-            .setAnimationMode(Fade.MODE_OUT)
+            .setAnimationMode(Fade.MODE_IN)
             .show()
     }
 
 }
+
+

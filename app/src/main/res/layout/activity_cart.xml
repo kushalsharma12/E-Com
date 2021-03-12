@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:elevation="8dp"
+    android:background="@color/white"
     android:orientation="vertical"
     android:padding="8dp"
     tools:context=".CartActivity">
@@ -11,7 +13,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cartRv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="425dp" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/order_cardView"
@@ -27,22 +29,25 @@
 
             >
 
-            <TextView
+            <Button
                 android:id="@+id/total_Cart_cost"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:text="Total Price"
+                android:textAllCaps="false"
                 android:textColor="@color/black"
-                android:textSize="28sp" />
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/cart_Address_update"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:hint="Your Address"
                 android:layout_marginTop="4dp"
                 android:textColor="@color/black"
-                android:textSize="28sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -50,16 +55,16 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="4dp"
                 android:text="Cash on Delivery"
-                android:textSize="36sp" />
+                android:textSize="20sp" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-
+                android:id="@+id/oooo"
                 android:text="Order"
                 android:textAllCaps="false"
-                android:textSize="32sp" />
+                android:textSize="14sp" />
 
 
         </LinearLayout>

@@ -88,4 +88,10 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 
+    //Google Materials
+    implementation 'com.google.android.material:material:1.1.0'
+
+    //For notif badge
+    implementation 'com.github.nikartm:image-support:1.1.0'
+
 }
